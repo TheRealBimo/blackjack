@@ -46,18 +46,18 @@ player_name = input("Enter your name:")
 cont = "y"
 restart = "y"
 while(blackjack != "2"):
-  print "______________________"
-  print "M A I N  M E N U"
-  print ""
-  print "Welcome to the basic Blackjack Simulator!", player_name
-  print ""
-  print player_name, "has won", wons, "number of games!"
-  print "Dealer has won", losses, "number of games! :("
-  print ""
-  print ""
-  print "What would you like to do?"
+  print("______________________")
+  print("M A I N  M E N U")
+  print("")
+  print( "Welcome to the basic Blackjack Simulator!", player_name)
+  print("")
+  print(player_name, "has won", wons, "number of games!")
+  print("Dealer has won", losses, "number of games! :(")
+  print("")
+  print("")
+  print("What would you like to do?")
   blackjack = input("1.)Play!\n2.)Quit.")
-  print "_____________________"
+  print("_____________________")
   if blackjack == "1":
     #restart = "y"
     player_deck = deck()
@@ -68,60 +68,60 @@ while(blackjack != "2"):
    #Cards of the players and the values
     dealer_count = card_values(dealer)
     player_count = card_values(player)
-    print "_________________________"
-    print "Dealer hand is:", dealer
-    print dealer_count, "points"
-    print "_________________________"
-    print  player_name, "hand is:", player
-    print  player_count, "points"
-    print "_________________________"
+    print("_________________________")
+    print("Dealer hand is:", dealer)
+    print(dealer_count, "points")
+    print("_________________________")
+    print(player_name, "hand is:", player)
+    print(player_count, "points")
+    print("_________________________")
     time.sleep(.5)
     if(player_count == 21):
-      print "Blackjack!"
+      print("Blackjack!")
       wons += 1
     elif(player_count > 21):
-      print player_name,"has BuStEd!!! With " + str(player_count) + " points. Dealer Wins! D:"
+      print(player_name,"has BuStEd!!! With " + str(player_count) + " points. Dealer Wins! D:")
       losses += 1
     elif(dealer_count == 21):
-      print "Dealer claimed blackjack!"
+      print("Dealer claimed blackjack!")
       losses += 1
     elif(dealer_count > 21):
-      print "Dealer has Busted! With " + str(dealer_count) + " points. Player Wins! :D"
+      print("Dealer has Busted! With " + str(dealer_count) + " points. Player Wins! :D")
       wons += 1
     else:
       hit_stay = input("What would you like to do? H: Hit, S: Stay ")
       time.sleep(.5)
-      print "_________________________"
+      print("_________________________")
       if(hit_stay == 'H' or hit_stay == 'h'):
         player_count += random.randint(1,11)
         dealer_count += random.randint(1,11)
-        print player_name, "now has", player_count, "points"
-        print "_______________________"
+        print(player_name, "now has", player_count, "points")
+        print("_______________________")
       else:
         (hit_stay == 'S' or hit_stay == 's')
         #nothing to be placed in here :D
       if player_count > 21:
-        print player_name, "has busted on his second attempt."
-        print "dealer wins!"
+        print(player_name, "has busted on his second attempt.")
+        print("dealer wins!")
         losses += 1
       elif dealer_count > 21:
-        print "Dealer has busted!"
-        print player_name, "has claimed a victory!"
+        print("Dealer has busted!")
+        print(player_name, "has claimed a victory!")
         wons += 1
       elif(player_count > dealer_count):
-        print player_name ,"wins with " + str(player_count) + " points!! :D"
+        print(player_name ,"wins with " + str(player_count) + " points!! :D")
         wons += 1
-        print "D E A L E R"
-        print "Dealer has: " + str(dealer_count) + " points"
+        print("D E A L E R")
+        print("Dealer has: " + str(dealer_count) + " points")
       else:
-        print "Dealer Wins! D:<"
+        print("Dealer Wins! D:<")
         losses += 1
-        print "_______________________"
-        print "Dealer has: " + str(dealer_count) + " points"
-        print player_name, "lost with: " + str(player_count) + " points"
-      print "_________________________"
-      print "G A M E ... O V E R..."
-      print ""
+        print("_______________________")
+        print("Dealer has: " + str(dealer_count) + " points")
+        print(player_name, "lost with: " + str(player_count) + " points")
+      print("_________________________")
+      print("G A M E ... O V E R...")
+      print("")
       time.sleep(.5)
       cont = input("Would you like to return to the Main Menu? (y/n)")
       if cont == "n":
