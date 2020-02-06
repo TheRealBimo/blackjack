@@ -42,7 +42,7 @@ def card_playing_hand(player_deck):
 blackjack = 0
 wons = 0
 losses = 0
-player_name = input("Enter your name:")
+player_name = input("Enter your name: ")
 cont = "y"
 restart = "y"
 while(blackjack != "2"):
@@ -56,7 +56,7 @@ while(blackjack != "2"):
   print("")
   print("")
   print("What would you like to do?")
-  blackjack = input("1.)Play!\n2.)Quit.")
+  blackjack = input("1.)Play!\n2.)Quit." )
   print("_____________________")
   if blackjack == "1":
     #restart = "y"
